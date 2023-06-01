@@ -26,8 +26,10 @@
         <form class="add" method="post" id="add-form">
             <input type="text" name="add" placeholder="Add task...">
             <div class="input-buttons">
-                <a href="#" class="add-todo">
-                    <i class="fas fa-plus add plus-icon"></i>
+                <a class="add-todo">
+                    <i class="fas fa-plus add plus-icon">
+<!--                       onclick="window.location.reload()"-->
+                    </i>
                 </a>
             </div>
         </form>
@@ -42,11 +44,11 @@
                 <li th:attr="id = ${task.id}" name="todo">
                     <input type="checkbox">
                     <label>
-                        <span class="check">
-                            <a style="padding-left: 35px"
+                        <span class="check"></span>
+                            <div class="todo-task"
                                th:attr="data-id = ${task.id}"
-                               th:text="${task.taskName}"></a>
-                        </span>
+                               th:text="${task.taskName}">
+                            </div>
                     </label>
                     <i class="far fa-trash-alt delete"></i>
 

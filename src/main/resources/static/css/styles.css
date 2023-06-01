@@ -29,10 +29,12 @@ textarea {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 320px;
-	height: 500px;
+	/*height: 500px;*/
+	min-height: 500px;
 	background: #171717;
 	border-radius: 10px;
 	box-shadow: 0 7px 30px rgba(75, 70, 6, 0.3);
+	height: auto;
 }
 
 .cover-img .cover-inner {
@@ -72,6 +74,7 @@ textarea {
 
 .content {
 	padding: 10px 20px;
+	height: auto;
 }
 
 .content form {
@@ -264,4 +267,8 @@ textarea {
 	-webkit-box-shadow:inset rgba(0, 0, 0, 0.701961) 0px 7px 12px,rgba(0, 0, 0, 0.701961) 0px 2px 12px  ;
 	text-shadow: rgb(0, 0, 0) 0px -2px 1px;
 	margin-top: 1px;
+}
+.todo-task
+{
+	display: flex;
 }
