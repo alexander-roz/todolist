@@ -1,0 +1,64 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ToDo List</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="../static/js/main.js"></script>
+</head>
+
+<body>
+
+<div class="todoList">
+    <div class="cover-img">
+        <div class="cover-inner">
+            <h3 id="dayName">Sunday</h3>
+        </div>
+    </div>
+
+    <div class="content">
+        <form class="add" method="post" id="add-form">
+            <input type="text" name="add" placeholder="Add task...">
+            <div class="input-buttons">
+                <a href="#" class="add-todo">
+                    <i class="fas fa-plus add plus-icon"></i>
+                </a>
+            </div>
+        </form>
+        <h1 class="task-count">Tasks
+            <span th:text="${tasksCount}">0</span>
+            <input type="button" class="refresh" id="refresh-button" value="reload">
+        </h1>
+
+        <ul class="todos align" id="tasks-list">
+
+            <div th:each="task : ${tasks}">
+                <li th:attr="id = ${task.id}" name="todo">
+                    <input type="checkbox">
+                    <label>
+                        <span class="check">
+                            <a style="padding-left: 35px"
+                               th:attr="data-id = ${task.id}"
+                               th:text="${task.taskName}"></a>
+                        </span>
+                    </label>
+                    <i class="far fa-trash-alt delete"></i>
+
+                </li>
+            </div>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+
+<script src="/js/main.js"></script>
+
+</html>
